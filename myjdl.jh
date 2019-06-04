@@ -1,0 +1,37 @@
+entity Dipendente {
+nome String,
+cognome String,
+dataNascita LocalDate,
+indirizzo String,
+numeroTelefono String,
+email String,
+nazionalita String required maxlength(20),
+
+}
+
+
+entity Skill {
+
+nome String,
+livello Integer,
+descrizione String,
+
+
+
+}
+
+
+
+relationship ManyToMany
+{
+Dipendente{Skill} to Skill{nome (nome) required}
+
+}
+
+paginate Dipendente with pagination
+paginate Skill with pager
+
+
+
+
+
