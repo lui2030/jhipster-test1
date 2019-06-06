@@ -26,7 +26,9 @@ public class Skill implements Serializable {
 
     @Column(name = "nome")
     private String nome;
-
+    
+    @Min(value = 1)
+    @Max(value = 5)
     @Column(name = "livello")
     private Integer livello;
 

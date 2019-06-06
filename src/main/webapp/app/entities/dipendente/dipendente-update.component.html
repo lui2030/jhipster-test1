@@ -62,7 +62,7 @@
                 <div class="form-group">
                     <label for="field_skills">Skill</label>
                     <select class="form-control" id="field_skills" multiple name="skills" formControlName="skills">
-                        <option [ngValue]="getSelected(editForm.get('skills').value, skillOption)" *ngFor="let skillOption of skills; trackBy: trackSkillById">{{skillOption.id}}</option>
+                        <option [ngValue]="getSelected(editForm.get('skills').value, skillOption)" *ngFor="let skillOption of skills; trackBy: trackSkillById">{{skillOption.nome}}</option>
                     </select>
                 </div>
             </div>

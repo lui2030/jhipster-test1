@@ -36,7 +36,7 @@
                 <dt><span>Skill</span></dt>
                 <dd>
                     <span *ngFor="let skill of dipendente.skills; let last = last">
-                        <a [routerLink]="['/skill', skill?.id, 'view' ]">{{skill.id}}</a>{{last ? '' : ', '}}
+                        <a [routerLink]="['/skill', skill?.id, 'view' ]">{{skill.nome}}</a>{{last ? '' : ', '}}
                     </span>
                 </dd>
             </dl>

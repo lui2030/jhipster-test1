@@ -21,8 +21,9 @@
             <th jhiSortBy="indirizzo"><span>Indirizzo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="numeroTelefono"><span>Numero Telefono</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="email"><span>Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="nazionalita"><span>Nazionalita</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="skills.id"><span>Skill</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nazionalita"><span>Nazionalita</span><fa-icon [icon]="'sort'"></fa-icon></th>
+            <th><span>Skill</span></th>
+            
             <th></th>
             </tr>
             </thead>
@@ -37,7 +38,7 @@
                 <td>{{dipendente.email}}</td>
                 <td>{{dipendente.nazionalita}}</td>
                 <td *ngFor="let skill of dipendente.skills">
-                        <span>{{skill.nome}}</span>
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><span>{{skill.nome}}</span></a>{{last ? '' : ', '}}
                 </td>
                 
                
