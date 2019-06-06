@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -97,11 +97,12 @@ public class DipendenteResource {
     public ResponseEntity<List<Dipendente>> getAllDipendentes(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get a page of Dipendentes");
         Page<Dipendente> page;
-        if (eagerload) {
+
             page = dipendenteRepository.findAllWithEagerRelationships(pageable);
-        } else {
-            page = dipendenteRepository.findAll(pageable);
-        }
+            Iterator it = page.iterator();
+            Dipendente d1 = (Dipendente) it.next();
+            System.out.println("Plansoft"+ d1.getSkills());
+        
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
