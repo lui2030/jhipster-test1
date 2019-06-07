@@ -1,5 +1,5 @@
 
-#Skills management
+# Skills management
 
 The project will allow the management of the skills, i.e. the technical and professional competencies of the employees of a company.
 In particular, the following entities will have to be managed
