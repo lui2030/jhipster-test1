@@ -14,7 +14,7 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <!-- <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="nome"><span>Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="livello"><span>Livello</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="descrizione"><span>Descrizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let skill of skills ;trackBy: trackId">
-                <td><a [routerLink]="['/skill', skill.id, 'view' ]">{{skill.id}}</a></td>
+                <!-- <td><a [routerLink]="['/skill', skill.id, 'view' ]">{{skill.id}}</a></td>-->
                 <td>{{skill.nome}}</td>
                 <td>{{skill.livello}}</td>
                 <td>{{skill.descrizione}}</td>

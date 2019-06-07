@@ -1,3 +1,4 @@
+
 <div>
     <h2 id="page-heading">
         <span>Dipendentes</span>
@@ -14,7 +15,7 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <!--  <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="nome"><span>Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="cognome"><span>Cognome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dataNascita"><span>Data Nascita</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -29,7 +30,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let dipendente of dipendentes ;trackBy: trackId">
-                <td><a [routerLink]="['/dipendente', dipendente.id, 'view' ]">{{dipendente.id}}</a></td>
+               <!-- <td><a [routerLink]="['/dipendente', dipendente.id, 'view' ]">{{dipendente.id}}</a></td>-->
                 <td>{{dipendente.nome}}</td>
                 <td>{{dipendente.cognome}}</td>
                 <td>{{dipendente.dataNascita | date:'mediumDate'}}</td>
@@ -37,10 +38,35 @@
                 <td>{{dipendente.numeroTelefono}}</td>
                 <td>{{dipendente.email}}</td>
                 <td>{{dipendente.nazionalita}}</td>
-                <td *ngFor="let skill of dipendente.skills">
+                <td>
+                <span *ngFor="let skill of dipendente.skills">
                         <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><span>{{skill.nome}}</span></a>{{last ? '' : ', '}}
+                        <p *ngIf="skill.livello == 1">
+                        
+                		
+                </span>
                 </td>
-                
+                <td>
+                <span *ngFor="let skill of dipendente.skills">
+                    
+                        <p *ngIf="skill.livello == 1">
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><img src="C:\Users\luigi\Desktop\test19\jhipster-test1\src\main\webapp\content\images\1.png"width="45" height="15"></a>
+                		</p>
+                		                        <p *ngIf="skill.livello == 2">
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><img src="C:\Users\luigi\Desktop\test19\jhipster-test1\src\main\webapp\content\images\2.png"width="45" height="15"></a>
+                		</p>
+                		                        <p *ngIf="skill.livello == 3">
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><img src="C:\Users\luigi\Desktop\test19\jhipster-test1\src\main\webapp\content\images\3.png"width="45" height="15"></a>
+                		</p>
+                		                        <p *ngIf="skill.livello == 4">
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><img src="C:\Users\luigi\Desktop\test19\jhipster-test1\src\main\webapp\content\images\4.png"width="45" height="15"></a>
+                		</p>
+                		                        <p *ngIf="skill.livello == 5">
+                        <a [routerLink]="['/skill', dipendente?.id, 'view' ]"><img src="C:\Users\luigi\Desktop\test19\jhipster-test1\src\main\webapp\content\images\5.png"width="45" height="15"></a>
+                		</p>
+                		
+                </span>
+                </td>
                
                 <td class="text-right">
                     <div class="btn-group">
