@@ -1,3 +1,14 @@
+
+#Skills management
+
+The project will allow the management of the skills, i.e. the technical and professional competencies of the employees of a company.
+In particular, the following entities will have to be managed
+- master skill: for each skill, you must indicate description and a display order
+- Employees' data: for each employee, the various personal data must be indicated.
+- Employee-Skill Association: in the table of association between the two entities you can indicate a level, from 1 to 5, of knowledge of the specific skill.
+
+
+
 # test
 
 This application was generated using JHipster 6.0.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.0.1](https://www.jhipster.tech/documentation-archive/v6.0.1).
